@@ -1,0 +1,2 @@
+F:/INTERNSHIP_Project/Iuea-SIS-Mobile-App/android/app/.cxx/Debug/5b1iiw6l/x86_64/CMakeFiles/edit_cache.dir
+F:/INTERNSHIP_Project/Iuea-SIS-Mobile-App/android/app/.cxx/Debug/5b1iiw6l/x86_64/CMakeFiles/rebuild_cache.dir
