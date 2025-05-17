@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'features/auth/login_screen.dart';
 
 class IUEASISApp extends StatelessWidget {
   const IUEASISApp({Key? key}) : super(key: key);
@@ -11,13 +12,28 @@ class IUEASISApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const WelcomeScreen(),
+      home: const SplashScreen(),
     );
   }
 }
 
-class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({Key? key}) : super(key: key);
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key}) : super(key: key);
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(seconds: 2), () {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (_) => const LoginScreen()),
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,30 +53,11 @@ class WelcomeScreen extends StatelessWidget {
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                // University Logo
-                Container(
-                  width: 120,
-                  height: 120,
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    shape: BoxShape.circle,
-                  ),
-                  child: Center(
-                    child: Text(
-                      'IUEA',
-                      style: TextStyle(
-                        fontSize: 32,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.blue.shade900,
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 32),
-
-                // University Name
-                const Text(
+              children: const [
+                // Logo de l'université
+                FlutterLogo(size: 100),
+                SizedBox(height: 32),
+                Text(
                   'INTERNATIONAL UNIVERSITY\nOF EAST AFRICA',
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -70,11 +67,8 @@ class WelcomeScreen extends StatelessWidget {
                     letterSpacing: 1.2,
                   ),
                 ),
-
-                const SizedBox(height: 16),
-
-                // Subtitle
-                const Text(
+                SizedBox(height: 16),
+                Text(
                   'Student Information System',
                   style: TextStyle(
                     fontSize: 18,
@@ -82,32 +76,9 @@ class WelcomeScreen extends StatelessWidget {
                     letterSpacing: 1.0,
                   ),
                 ),
-
-                const SizedBox(height: 64),
-
-                // Get Started Button
-                ElevatedButton(
-                  onPressed: () {
-                    // No navigation for now
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content:
-                            Text('Welcome to IUEA Student Information System!'),
-                        duration: Duration(seconds: 2),
-                      ),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.blue.shade900,
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 32, vertical: 16),
-                    textStyle: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  child: const Text('Welcome'),
+                SizedBox(height: 48),
+                CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
                 ),
               ],
             ),

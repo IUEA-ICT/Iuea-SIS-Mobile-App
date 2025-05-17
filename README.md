@@ -93,3 +93,5 @@ This is a Flutter-based mobile application for the **International University of
 │   └── auth/DANIEL                        # If login/logout is involved
 │       ├── login_screen.dart
 │       └── auth_service.dart
+
+        Splash Screen
