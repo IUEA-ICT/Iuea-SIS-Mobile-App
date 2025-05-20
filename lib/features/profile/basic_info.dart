@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CourseDetailsCard extends StatelessWidget {
-  const CourseDetailsCard({Key? key}) : super(key: key);
+class BasicInfoCard extends StatelessWidget {
+  const BasicInfoCard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,12 +11,12 @@ class CourseDetailsCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
-            Text('Course Details', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+            Text('Basic Information', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
             SizedBox(height: 12),
-            CourseRow(label: 'Intake Period', value: '(to be filled)'),
-            CourseRow(label: 'Progress Semester', value: '(to be filled)'),
-            CourseRow(label: 'Progress Year', value: '(to be filled)'),
-            CourseRow(label: 'Student Status', value: '(to be filled)'),
+            InfoRow(label: 'Registration Number', value: '24/276/BSCS-S'),
+            InfoRow(label: 'Full Name', value: 'Mugalu Wa Thumba Daniel'),
+            InfoRow(label: 'Program', value: 'Bachelor of Science in Computer Science (BSCS)'),
+            InfoRow(label: 'Academic Award', value: 'BACHELOR'),
           ],
         ),
       ),
@@ -24,10 +24,10 @@ class CourseDetailsCard extends StatelessWidget {
   }
 }
 
-class CourseRow extends StatelessWidget {
+class InfoRow extends StatelessWidget {
   final String label;
   final String value;
-  const CourseRow({required this.label, required this.value, Key? key}) : super(key: key);
+  const InfoRow({required this.label, required this.value, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

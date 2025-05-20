@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'features/auth/login_screen.dart';
+import 'config/app_theme.dart';
+import 'config/constants.dart';
 
 class IUEASISApp extends StatelessWidget {
   const IUEASISApp({Key? key}) : super(key: key);
@@ -8,10 +10,9 @@ class IUEASISApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'IUEA SIS',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: ThemeMode.system, // S'adapte à la config du téléphone
       home: const SplashScreen(),
     );
   }
@@ -39,13 +40,13 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Colors.blue.shade700,
-              Colors.blue.shade900,
+              AppColors.darkRed,
+              AppColors.black,
             ],
           ),
         ),
@@ -53,11 +54,18 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                // Logo de l'université
-                FlutterLogo(size: 100),
-                SizedBox(height: 32),
-                Text(
+              children: [
+                // Logo de l'université en cercle
+                ClipOval(
+                  child: Image.asset(
+                    'assets/images/logo_iuea.jpg',
+                    width: 100,
+                    height: 100,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                const SizedBox(height: 32),
+                const Text(
                   'INTERNATIONAL UNIVERSITY\nOF EAST AFRICA',
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -67,8 +75,8 @@ class _SplashScreenState extends State<SplashScreen> {
                     letterSpacing: 1.2,
                   ),
                 ),
-                SizedBox(height: 16),
-                Text(
+                const SizedBox(height: 16),
+                const Text(
                   'Student Information System',
                   style: TextStyle(
                     fontSize: 18,
@@ -76,9 +84,9 @@ class _SplashScreenState extends State<SplashScreen> {
                     letterSpacing: 1.0,
                   ),
                 ),
-                SizedBox(height: 48),
-                CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                const SizedBox(height: 48),
+                const CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(AppColors.white),
                 ),
               ],
             ),

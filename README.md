@@ -94,4 +94,102 @@ This is a Flutter-based mobile application for the **International University of
 │       ├── login_screen.dart
 │       └── auth_service.dart
 
-        Splash Screen
+//        Splash Screen
+
+# Student Profile Menu
+
+### 🧱 Overall Profile Structure
+
+The profile screen is built as a `ListView` containing several distinct sections:
+
+* `ProfileHeader` – Displays the student's profile picture, full name, and registration number.
+* `BasicInformationCard` – Displays core academic details.
+* `ContactInformationCard` – Displays administrative and personal contact details.
+* `FinancialInformationCard` – Displays billing and payment information.
+* `CourseDetailsCard` – Displays academic progress details (semester, year, status).
+
+---
+
+### 🧍‍♂️ ProfileHeader
+
+Shows the student's key identity information:
+
+* Profile picture (avatar)
+* Full name: **Mugalu Wa Thumba Daniel**
+* Registration number: **24/276/BSCS-S**
+
+---
+
+### 📘 Basic Information
+
+Core academic data:
+
+* Registration number **24/276/BSCS-S**
+* Full name **Mugalu Wa Thumba Daniel**
+* Program: **Bachelor of Science in Computer Science (BSCS)**
+* Academic Award: **BACHELOR**
+
+---
+
+### ☎️ Contact Information
+
+Administrative and personal contact data:
+
+* Phone: **256772826718**
+* Email: **[danielmugalu945@gmail.com](mailto:danielmugalu945@gmail.com)**
+* Gender: **Male**
+* Nationality: **CG**
+* Passport No.: **OP1562669**
+* Passport Expiry Date: **2028-12-18**
+* Visa Status: **Valid**
+* Visa Expiry Date: **2025-06-18**
+
+---
+
+### 💰 Financial Information
+
+Billing and payment summary:
+
+* Total Billed: **\$3,012.00**
+* Total Paid: **\$3,112.00**
+* Balance: **-\$100.00** *(credit)*
+
+---
+
+### 📚 Course Details
+
+Academic progress details:
+
+* Intake Period: *(to be filled)*
+* Progress Semester: *(to be filled)*
+* Progress Year: *(to be filled)*
+* Student Status: *(to be filled)*
+
+---
+
+### 💡 Technical Notes
+
+* Each section is encapsulated in a `Card` for clean display and modularity.
+* Flutter icons such as `Icons.phone`, `Icons.email`, etc., are recommended.
+* The layout uses `ListView`, `Padding`, `Column`, and `Text` for a responsive UI.
+
+---
+
+## Package structure
+
+lib/
+├── features/                        # Main features of the application
+│
+│   ├── profile/                     # User profile section
+│   │   ├── profile_screen.dart             # Main profile screen
+│   │   ├── profile_header.dart             # Profile picture, name, registration number
+│   │   ├── basic_info.dart                 # Registration number, Full name, Program, academic award
+│   │   ├── contact_info.dart               # Phone, E-mail, Gender, Nationality, Nassport N°, Passport Expiry Date, Visa Status, Visa Expiry Date
+│   │   ├── financial_info.dart             # Total billed ($), Total Paid ($), Balance ($)
+│   │   └── course_details.dart             # Intake Period, Progress Semester, Progress Year, Student Status
+│
+│   └── auth/                        # Authentication (login, logout)
+│       ├── login_screen.dart
+│       └── auth_service.dart
+│
+├── main.dart                        # Application entry point

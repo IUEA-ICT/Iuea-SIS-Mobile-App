@@ -8,14 +8,14 @@ class AuthService {
 
   // Méthode de connexion simulée
   Future<bool> login({
-    required String email,
+    required String registrationNumber,
     required String password,
   }) async {
     // Simuler un délai réseau
     await Future.delayed(const Duration(seconds: 1));
 
     // Exemple de logique d'authentification (à remplacer par une vraie logique)
-    if (email == 'user@iuea.ac.ug' && password == 'password123') {
+    if (registrationNumber == '24/276/BSCS-S' && password == '1234') {
       return true;
     }
     return false;
