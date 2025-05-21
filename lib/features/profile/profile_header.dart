@@ -14,7 +14,7 @@ class ProfileHeader extends StatelessWidget {
           children: const [
             CircleAvatar(
               radius: 40,
-              backgroundImage: AssetImage('assets/avatar_placeholder.png'),
+              backgroundImage: AssetImage('assets/images/logo_iuea.jpg'),
               // Remplacer par une vraie image si disponible
             ),
             SizedBox(height: 12),
