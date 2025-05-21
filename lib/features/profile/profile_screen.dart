@@ -4,7 +4,7 @@ import 'basic_info.dart';
 import 'contact_info.dart';
 import 'financial_info.dart';
 import 'course_details.dart';
-import '../auth/login_screen.dart';
+import '../dashboard/dashboard_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class ProfileScreen extends StatelessWidget {
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.of(context).pushAndRemoveUntil(
-              MaterialPageRoute(builder: (_) => const LoginScreen()),
+              MaterialPageRoute(builder: (_) => const DashboardScreen()),
               (route) => false,
             );
           },

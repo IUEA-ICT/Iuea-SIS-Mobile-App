@@ -193,3 +193,4 @@ lib/
 │       └── auth_service.dart
 │
 ├── main.dart                        # Application entry point
+
